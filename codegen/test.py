@@ -1,3 +1,3 @@
 a = { 1:2, 1:3}
-for i in a:
-    print 1
+if a.has_key(1):
+    print "fuck"

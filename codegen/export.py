@@ -52,8 +52,11 @@ def export_color(color, f):
 
     f.write("clr.setNONE();\n")
     if color.attrib.has_key("theme") and color.attrib.has_key("tint"):
+        tint = color.attrib["tint"]
+        if ETTINT.has_key(tint):
+            tint = ETTINT[tint]
         f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] +
-            ", " + color.attrib["tint"] + ");")
+            ", " + tint + ");")
 
         tintdict[color.attrib["tint"]] = "whatever"
         themedict[color.attrib["theme"]] = "whatever"
@@ -86,7 +89,7 @@ def export_dxf(dxf, f, t):
 
 def export_fill(fill, f):
     # print "export fill"
-    print fill.getchildren()
+    # print fill.getchildren()
 
     for i in fill.getchildren():
         fillsubtagdict[i.tag] = "whatever"
@@ -104,7 +107,7 @@ def export_gradientfill(gradientfill, f):
 
 def export_patternfill(patternfill, f):
     # print "export patternfill"
-    print patternfill
+    # print patternfill
 
     if patternfill.attrib.has_key("patternType"):
         f.write("_xf.pFill->setType(" + ETFILLTYPE[patternfill.attrib["patternType"]] + ")")
@@ -144,7 +147,7 @@ def export_border(border, f):
     for i in children:
         bordersubtagdict[i.tag] = "whatever"
 
-    print children
+    # print children
     for child in children:
         if child.tag == "left":
             if child.get("style") is not None:

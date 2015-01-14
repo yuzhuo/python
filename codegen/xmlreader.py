@@ -6,8 +6,14 @@ try:
     tree = ET.ElementTree(file='presetTableStyles.xml')
     root = tree.getroot()
 
-    f = open("test.cpp", "wb")
+    f = open("builtintablestyles.inl", "wb")
 
+    f.write("const double dblAccentPercent20 = 0.79998168889431442;\n")
+    f.write("double dblAccentPercent40 = 0.59999389629810485;\n")
+    f.write("const double dblAccentPercent60 = 0.39997558519241921;\n")
+    f.write("ks_stdptr<KCoreTableStyle> spItm;\n")
+    f.write("KXF _xf;\n")
+    f.write("EtColor clr;\n\n")
     for i in root:
         dxfs = i.find("dxfs")
         tableStyles = i.find("tableStyles")
@@ -16,7 +22,7 @@ try:
         f.write("///////////////////" + tableStyle.get("name") +
                 "///////////////////" "\n")
         f.write("spItm.attach(RTS_NEW(KCoreTableStyle, m_spStyVec));\n")
-        f.write("spItem->Init(BSI_" + tableStyle.get("name") + ")\n")
+        f.write("spItm->Init(BSI_" + tableStyle.get("name") + ");\n")
         f.write("spItm->SetName(\"" + tableStyle.get("name") + "\");\n\n")
         for tableStyleElement in tableStyle:
             t = tableStyleElement.get("type")

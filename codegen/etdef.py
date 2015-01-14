@@ -80,3 +80,10 @@ ETTHEMETYPE = \
 }
 
 # print ETTHEMETYPE
+
+ETTINT = \
+{
+    "0.79998168889431442"	 : "dblAccentPercent20",
+    "0.59999389629810485"	 : "dblAccentPercent40",
+    "0.39997558519241921"	 : "dblAccentPercent60"
+}

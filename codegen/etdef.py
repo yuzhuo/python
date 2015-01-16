@@ -1,18 +1,18 @@
 TABLE_STYLE_FORMAT =\
 {
-    "WholeTable" : "TSF_WholeTableXF",
-    "FirstColStripe" : "TSF_FirstColStripeXF",
-    "SecondColStripe" : "TSF_SecondColStripeXF",
-    "FirstRowStripe" : "TSF_FirstRowStripeXF",
-    "SecondRowStripe" : "TSF_SecondRowStripeXF",
-    "LastCol" : "TSF_LastColXF",
-    "FirstCol" : "TSF_FirstColXF",
-    "HeaderRow" : "TSF_HeaderRowXF",
-    "TotalRow" : "TSF_TotalRowXF",
-    "FirstHdrCell" : "TSF_FirstHdrCellXF",
-    "LastHdrCell" : "TSF_LastHdrCellXF",
-    "FirstTotalCell" : "TSF_FirstTotalCellXF",
-    "LastTotalCell" : "TSF_LastTotalCellXF"
+    "wholeTable" : "TSF_WholeTableXF",
+    "firstColumnStripe" : "TSF_FirstColStripeXF",
+    "secondColumnStripe" : "TSF_SecondColStripeXF",
+    "firstRowStripe" : "TSF_FirstRowStripeXF",
+    "secondRowStripe" : "TSF_SecondRowStripeXF",
+    "lastColumn" : "TSF_LastColXF",
+    "firstColumn" : "TSF_FirstColXF",
+    "headerRow" : "TSF_HeaderRowXF",
+    "totalRow" : "TSF_TotalRowXF",
+    "firstHdrCell" : "TSF_FirstHdrCellXF",
+    "lastHdrCell" : "TSF_LastHdrCellXF",
+    "firstTotalCell" : "TSF_FirstTotalCellXF",
+    "lastTotalCell" : "TSF_LastTotalCellXF"
 }
 
 # print TABLE_STYLE_FORMAT
@@ -83,7 +83,14 @@ ETTHEMETYPE = \
 
 ETTINT = \
 {
-    "0.79998168889431442"	 : "dblAccentPercent20",
-    "0.59999389629810485"	 : "dblAccentPercent40",
-    "0.39997558519241921"	 : "dblAccentPercent60"
+    "0.79998168889431442" :	"dblAccentPercent20",
+    "0.59999389629810485" :	"dblAccentPercent40",
+    "-0.499984740745262" : "-dblAccentPercent50",
+    "0.44999542222357858" :	"dblAccentPercent55",
+    "0.39997558519241921" :	"dblAccentPercent60",
+    "-0.34998626667073579" :	"-dblAccentPercent65",
+    "0.249977111117893" :	"dblAccentPercent75",
+    "0.1499984740745262" :	"dblAccentPercent85",
+    "-0.249977111117893" :	"-dblAccentPercent75",
+    "-0.1499984740745262" :	"-dblAccentPercent85"
 }

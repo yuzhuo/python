@@ -4742,7 +4742,7 @@
 			</dxf>
 		</dxfs>
 		<tableStyles count="1" defaultTableStyle="TableStyleMedium9" defaultPivotStyle="PivotStyleLight16">
-			<tableStyle name="TableStyleDark9 2" pivot="0" count="7">
+			<tableStyle name="TableStyleDark9" pivot="0" count="7">
 				<tableStyleElement type="wholeTable" dxfId="7"/>
 				<tableStyleElement type="headerRow" dxfId="6"/>
 				<tableStyleElement type="totalRow" dxfId="5"/>

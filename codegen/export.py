@@ -40,13 +40,6 @@ def newline(f):
 
 
 def export_color(color, f):
-    # if color.attrib.has_key("theme") and color.attrib.has_key("tint"):
-    #     f.write("clr.setTheme((ETTHEMETYPE)" + color.attrib["theme"] +\
-    #         ", " + color.attrib["tint"] + ");")
-    # elif color.attrib.has_key("theme"):
-    #     f.write("clr.setTheme((ETTHEMETYPE)" + color.attrib["theme"] + ");")
-    # newline(f)
-
     for i in color.attrib:
         colorattrdict[i] = "whatever"
 
@@ -57,12 +50,13 @@ def export_color(color, f):
             tint = ETTINT[tint]
         f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] +
             ", " + tint + ");")
-
         tintdict[color.attrib["tint"]] = "whatever"
         themedict[color.attrib["theme"]] = "whatever"
-
     elif color.attrib.has_key("theme"):
         f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] + ");")
+    elif color.attrib.has_key("other attribute"):
+        pass
+
     newline(f)
 
 
@@ -84,7 +78,9 @@ def export_dxf(dxf, f, t):
             export_font(attr, f)
         elif attr.tag == "border":
             export_border(attr, f)
-    f.write("spItm->SetFormat(TSF_" + t + "XF, &_xf);\n")
+    t = TABLE_STYLE_FORMAT[t]
+    print t
+    f.write("spItm->SetFormat(" + t + ", &_xf);\n")
     newline(f)
 
 def export_fill(fill, f):
@@ -110,15 +106,15 @@ def export_patternfill(patternfill, f):
     # print patternfill
 
     if patternfill.attrib.has_key("patternType"):
-        f.write("_xf.pFill->setType(" + ETFILLTYPE[patternfill.attrib["patternType"]] + ")")
+        f.write("_xf.fill.setType(" + ETFILLTYPE[patternfill.attrib["patternType"]] + ");")
         newline(f)
     if patternfill.find("fgColor") is not None:
         export_color(patternfill.find("fgColor"), f)
-        f.write("_xf.pFill->setFore(clr);")
+        f.write("_xf.fill.setFore(clr);")
         newline(f)
     if patternfill.find("bgColor") is not None:
         export_color(patternfill.find("bgColor"), f)
-        f.write("_xf.pFill->setBack(clr);")
+        f.write("_xf.fill.setBack(clr);")
         newline(f)
 
 
@@ -131,11 +127,11 @@ def export_font(font, f):
 
     for child in children:
         if child.tag == "b":
-            f.write("_xf.pFont->bls = 1;")
+            f.write("_xf.font.bls = 1;")
             newline(f)
         elif child.tag == "color":
             export_color(child, f)
-            f.write("_xf.pFont->clr = clr;")
+            f.write("_xf.font.clr = clr;")
             newline(f)
 
 
@@ -177,4 +173,8 @@ def export_border(border, f):
             if child.find("color") is not None:
                 export_color(child.find("color"), f)
                 f.write("_xf.clrBottom = clr;\n")
+        elif child.tag == "horizontal":
+            pass
+        elif child.tag == "vertical":
+            pass
 

@@ -10,7 +10,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 28);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -27,6 +27,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent6, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrVert, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent6, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -82,7 +86,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 27);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -99,6 +103,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent5, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrVert, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent5, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -154,7 +162,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 26);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -171,6 +179,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent4, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrVert, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent4, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -226,7 +238,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 25);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -243,6 +255,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent3, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrVert, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent3, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -298,7 +314,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 24);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -315,6 +331,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent2, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrVert, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent2, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -370,7 +390,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 23);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -387,6 +407,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent1, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrVert, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent1, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -442,7 +466,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 22);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -459,6 +483,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeLight1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -514,7 +542,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 21);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -588,7 +616,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 20);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -662,7 +690,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 19);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -736,7 +764,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 18);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -810,7 +838,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 17);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -884,7 +912,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 16);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -958,7 +986,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 15);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -972,6 +1000,10 @@ SET_BORDER_TYPE(dgTop, blsMedium);
 SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 SET_BORDER_TYPE(dgBottom, blsMedium);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeLight1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1036,7 +1068,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 14);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1045,6 +1077,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1114,7 +1150,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 13);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1123,6 +1159,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1192,7 +1232,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 12);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1201,6 +1241,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1270,7 +1314,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 11);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1279,6 +1323,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1348,7 +1396,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 10);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1357,6 +1405,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1426,7 +1478,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 9);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1435,6 +1487,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1504,7 +1560,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 8);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1513,6 +1569,10 @@ SET_FONT_CLR_THEME(ettThemeLight1);
 SET_FILL_TYPE(eftPatternSolid);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
 SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeDark1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeDark1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1582,7 +1642,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 7);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1596,6 +1656,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent6, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent6, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1654,7 +1716,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 6);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1668,6 +1730,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent5, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent5, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1726,7 +1790,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 5);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1740,6 +1804,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent4, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent4, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1798,7 +1864,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 4);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1812,6 +1878,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent3, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent3, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1870,7 +1938,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 3);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1884,6 +1952,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent2, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent2, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -1942,7 +2012,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 2);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -1956,6 +2026,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent1, dblAccentPercent60);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrHorz, ettThemeAccent1, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2014,7 +2086,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 1);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2028,6 +2100,8 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2086,7 +2160,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 21);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2100,6 +2174,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent6);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeAccent6);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeAccent6);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2157,7 +2235,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 20);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2171,6 +2249,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent5);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeAccent5);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeAccent5);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2228,7 +2310,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 19);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2242,6 +2324,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent4);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeAccent4);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeAccent4);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2299,7 +2385,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 18);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2313,6 +2399,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent3);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeAccent3);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeAccent3);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2370,7 +2460,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 17);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2384,6 +2474,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent2);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeAccent2);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeAccent2);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2441,7 +2535,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 16);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2455,6 +2549,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent1);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeAccent1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeAccent1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2512,7 +2610,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 15);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2526,6 +2624,10 @@ SET_BORDER_TYPE(dgTop, blsThin);
 SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 SET_BORDER_TYPE(dgBottom, blsThin);
 SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
+SET_BORDER_TYPE(dgVert, blsThin);
+SET_BORDER_CLR_THEME(clrVert, ettThemeLight1);
+SET_BORDER_TYPE(dgHorz, blsThin);
+SET_BORDER_CLR_THEME(clrHorz, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
@@ -2583,7 +2685,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 14);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2665,7 +2767,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 13);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2747,7 +2849,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 12);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2829,7 +2931,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 11);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2911,7 +3013,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 10);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -2993,7 +3095,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 9);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3075,7 +3177,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 8);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3157,7 +3259,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 7);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3224,7 +3326,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 6);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3291,7 +3393,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 5);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3358,7 +3460,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 4);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3425,7 +3527,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 3);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3492,7 +3594,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 2);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3559,7 +3661,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 1);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3626,7 +3728,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 11);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3691,7 +3793,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 10);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3756,7 +3858,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 9);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3821,7 +3923,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 8);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3886,7 +3988,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 7);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -3968,7 +4070,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 6);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -4050,7 +4152,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 5);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -4132,7 +4234,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 4);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -4214,7 +4316,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 3);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -4296,7 +4398,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 2);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF
@@ -4378,7 +4480,7 @@ ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 1);
 spItm->SetName(wstrName.c_str());
 
-KXF _xf;
+KTableXF _xf;
 EtColor clr;
 
 // wholeTableXF

@@ -244,7 +244,21 @@ def export_border(border, f):
                 # f.write("_xf.clrBottom = clr;\n")
                 export_bordercolor(child.find("color"), f, "clrBottom")
         elif child.tag == "horizontal":
-            pass
+            if child.get("style") is not None:
+                # f.write("_xf.dgHorz = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                f.write("SET_BORDER_TYPE(dgHorz, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
+                newline(f)
+            if child.find("color") is not None:
+                # export_color(child.find("color"), f)
+                # f.write("_xf.clrHorz = clr;\n")
+                export_bordercolor(child.find("color"), f, "clrHorz")
         elif child.tag == "vertical":
-            pass
+            if child.get("style") is not None:
+                # f.write("_xf.dgVert = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                f.write("SET_BORDER_TYPE(dgVert, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
+                newline(f)
+            if child.find("color") is not None:
+                # export_color(child.find("color"), f)
+                # f.write("_xf.clrVert = clr;\n")
+                export_bordercolor(child.find("color"), f, "clrVert")
 

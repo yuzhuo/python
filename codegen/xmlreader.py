@@ -62,7 +62,7 @@ try:
         f.write("ks_wstring wstrName(" + namestr + ");\n")
         f.write("wstrName.AppendFormat(__X(\"%d\"), " + str(num+1) + ");\n")
         f.write("spItm->SetName(wstrName.c_str());\n\n")
-        f.write("KXF _xf;\n")
+        f.write("KTableXF _xf;\n")
         f.write("EtColor clr;\n\n")
         for tableStyleElement in tableStyle:
             t = tableStyleElement.get("type")

@@ -39,26 +39,83 @@ def newline(f):
     f.write("\n")
 
 
-def export_color(color, f):
+# def export_color(color, f):
+#     for i in color.attrib:
+#         colorattrdict[i] = "whatever"
+#
+#     f.write("clr.setNONE();\n")
+#     if color.attrib.has_key("theme") and color.attrib.has_key("tint"):
+#         tint = color.attrib["tint"]
+#         if ETTINT.has_key(tint):
+#             tint = ETTINT[tint]
+#         f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] +
+#             ", " + tint + ");")
+#         tintdict[color.attrib["tint"]] = "whatever"
+#         themedict[color.attrib["theme"]] = "whatever"
+#     elif color.attrib.has_key("theme"):
+#         f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] + ");")
+#     elif color.attrib.has_key("other attribute"):
+#         pass
+#
+#     newline(f)
+
+def export_fillcolor(color, f, ForeBack):
     for i in color.attrib:
         colorattrdict[i] = "whatever"
 
-    f.write("clr.setNONE();\n")
     if color.attrib.has_key("theme") and color.attrib.has_key("tint"):
         tint = color.attrib["tint"]
         if ETTINT.has_key(tint):
             tint = ETTINT[tint]
-        f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] +
+        f.write("SET_PATTERNFILL_CLR_THEMEANDTINT(" + ForeBack + ", " + ETTHEMETYPE[color.attrib["theme"]] +
             ", " + tint + ");")
         tintdict[color.attrib["tint"]] = "whatever"
         themedict[color.attrib["theme"]] = "whatever"
     elif color.attrib.has_key("theme"):
-        f.write("clr.setTheme(" + ETTHEMETYPE[color.attrib["theme"]] + ");")
+        f.write("SET_PATTERNFILL_CLR_THEME(" + ForeBack + ", " + ETTHEMETYPE[color.attrib["theme"]] + ");")
     elif color.attrib.has_key("other attribute"):
         pass
 
     newline(f)
 
+
+def export_fontcolor(color, f):
+    for i in color.attrib:
+        colorattrdict[i] = "whatever"
+
+    if color.attrib.has_key("theme") and color.attrib.has_key("tint"):
+        tint = color.attrib["tint"]
+        if ETTINT.has_key(tint):
+            tint = ETTINT[tint]
+        f.write("SET_FONT_CLR_THEMEANDTINT(" + ETTHEMETYPE[color.attrib["theme"]] +
+            ", " + tint + ");")
+        tintdict[color.attrib["tint"]] = "whatever"
+        themedict[color.attrib["theme"]] = "whatever"
+    elif color.attrib.has_key("theme"):
+        f.write("SET_FONT_CLR_THEME(" + ETTHEMETYPE[color.attrib["theme"]] + ");")
+    elif color.attrib.has_key("other attribute"):
+        pass
+
+    newline(f)
+
+def export_bordercolor(color, f, clrBrd):
+    for i in color.attrib:
+        colorattrdict[i] = "whatever"
+
+    if color.attrib.has_key("theme") and color.attrib.has_key("tint"):
+        tint = color.attrib["tint"]
+        if ETTINT.has_key(tint):
+            tint = ETTINT[tint]
+        f.write("SET_BORDER_CLR_THEMEANDTINT(" + clrBrd + ", " + ETTHEMETYPE[color.attrib["theme"]] +
+            ", " + tint + ");")
+        tintdict[color.attrib["tint"]] = "whatever"
+        themedict[color.attrib["theme"]] = "whatever"
+    elif color.attrib.has_key("theme"):
+        f.write("SET_BORDER_CLR_THEME(" + clrBrd + ", " + ETTHEMETYPE[color.attrib["theme"]] + ");")
+    elif color.attrib.has_key("other attribute"):
+        pass
+
+    newline(f)
 
 def export_dxfs(dxfs, f):
     count = 0
@@ -70,6 +127,7 @@ def export_dxfs(dxfs, f):
 
 def export_dxf(dxf, f, t):
     f.write("// " + t + "XF\n")
+    # f.write("DEFINE_XFANDCOLOR\n\n")
     f.write("_xf.reset();\n")
     for attr in dxf:
         if attr.tag == "fill":
@@ -106,16 +164,18 @@ def export_patternfill(patternfill, f):
     # print patternfill
 
     if patternfill.attrib.has_key("patternType"):
-        f.write("_xf.fill.setType(" + ETFILLTYPE[patternfill.attrib["patternType"]] + ");")
+        f.write("SET_FILL_TYPE(" + ETFILLTYPE[patternfill.attrib["patternType"]] + ");")
         newline(f)
     if patternfill.find("fgColor") is not None:
-        export_color(patternfill.find("fgColor"), f)
-        f.write("_xf.fill.setFore(clr);")
-        newline(f)
+        # export_color(patternfill.find("fgColor"), f)
+        # f.write("_xf.fill.setFore(clr);")
+        export_fillcolor(patternfill.find("fgColor"), f, "Fore")
+        # newline(f)
     if patternfill.find("bgColor") is not None:
-        export_color(patternfill.find("bgColor"), f)
-        f.write("_xf.fill.setBack(clr);")
-        newline(f)
+        # export_color(patternfill.find("bgColor"), f)
+        # f.write("_xf.fill.setBack(clr);")
+        export_fillcolor(patternfill.find("fgColor"), f, "Back")
+        # newline(f)
 
 
 def export_font(font, f):
@@ -127,12 +187,14 @@ def export_font(font, f):
 
     for child in children:
         if child.tag == "b":
-            f.write("_xf.font.bls = 1;")
+            # f.write("_xf.font.bls = 1;")
+            f.write("SET_FONT_BOLD();")
             newline(f)
         elif child.tag == "color":
-            export_color(child, f)
-            f.write("_xf.font.clr = clr;")
-            newline(f)
+            # export_color(child, f)
+            # f.write("_xf.font.clr = clr;")
+            export_fontcolor(child, f)
+         # newline(f)
 
 
 
@@ -147,32 +209,40 @@ def export_border(border, f):
     for child in children:
         if child.tag == "left":
             if child.get("style") is not None:
-                f.write("_xf.dgLeft = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                # f.write("_xf.dgLeft = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                f.write("SET_BORDER_TYPE(dgLeft, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
                 newline(f)
             if child.find("color") is not None:
-                export_color(child.find("color"), f)
-                f.write("_xf.clrLeft = clr;\n")
+                # export_color(child.find("color"), f)
+                # f.write("_xf.clrLeft = clr;\n")
+                export_bordercolor(child.find("color"), f, "clrLeft")
         elif child.tag == "right":
             if child.get("style") is not None:
-                f.write("_xf.dgRight = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                # f.write("_xf.dgRight = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                f.write("SET_BORDER_TYPE(dgRight, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
                 newline(f)
             if child.find("color") is not None:
-                export_color(child.find("color"), f)
-                f.write("_xf.clrRight = clr;\n")
+                # export_color(child.find("color"), f)
+                # f.write("_xf.clrRight = clr;\n")
+                export_bordercolor(child.find("color"), f, "clrRight")
         elif child.tag == "top":
             if child.get("style") is not None:
-                f.write("_xf.dgTop = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                # f.write("_xf.dgTop = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                f.write("SET_BORDER_TYPE(dgTop, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
                 newline(f)
             if child.find("color") is not None:
-                export_color(child.find("color"), f)
-                f.write("_xf.clrTop = clr;\n")
+                # export_color(child.find("color"), f)
+                # f.write("_xf.clrTop = clr;\n")
+                export_bordercolor(child.find("color"), f, "clrTop")
         elif child.tag == "bottom":
             if child.get("style") is not None:
-                f.write("_xf.dgBottom = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                # f.write("_xf.dgBottom = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
+                f.write("SET_BORDER_TYPE(dgBottom, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
                 newline(f)
             if child.find("color") is not None:
-                export_color(child.find("color"), f)
-                f.write("_xf.clrBottom = clr;\n")
+                # export_color(child.find("color"), f)
+                # f.write("_xf.clrBottom = clr;\n")
+                export_bordercolor(child.find("color"), f, "clrBottom")
         elif child.tag == "horizontal":
             pass
         elif child.tag == "vertical":

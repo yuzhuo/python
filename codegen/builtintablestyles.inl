@@ -4,100 +4,69 @@
 void AddTableStyleMedium28(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 27);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 28);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent6, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -107,100 +76,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium27(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 26);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 27);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent5, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -210,100 +148,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium26(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 25);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 26);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent4, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -313,100 +220,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium25(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 24);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 25);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent3, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -416,100 +292,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium24(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 23);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 24);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent2, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -519,100 +364,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium23(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 22);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 23);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent1, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -622,100 +436,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium22(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 21);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 22);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -dblAccentPercent65);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -dblAccentPercent65);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -dblAccentPercent65);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -dblAccentPercent65);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -725,106 +508,71 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium21(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 20);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 21);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -834,106 +582,71 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium20(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 19);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 20);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -943,106 +656,71 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium19(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 18);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 19);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1052,106 +730,71 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium18(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 17);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 18);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1161,106 +804,71 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium17(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 16);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 17);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1270,106 +878,71 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium16(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 15);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 16);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1379,114 +952,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium15(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 14);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 15);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrRight = clr;
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1496,116 +1030,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium14(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 13);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 14);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1615,116 +1108,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium13(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 12);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 13);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1734,116 +1186,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium12(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 11);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 12);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1853,116 +1264,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium11(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 10);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 11);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -1972,116 +1342,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium10(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 9);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 10);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2091,116 +1420,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium9(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 8);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 9);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2210,116 +1498,75 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium8(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 7);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 8);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThick);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsThick;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThick);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -dblAccentPercent65);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -dblAccentPercent65);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -dblAccentPercent65);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -dblAccentPercent65);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2329,100 +1576,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium7(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 6);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 7);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent6, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent6, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2432,100 +1648,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium6(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 5);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 6);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent5, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent5, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2535,100 +1720,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium5(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 4);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 5);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent4, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent4, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2638,100 +1792,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium4(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 3);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 4);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent3, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent3, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2741,100 +1864,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium3(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 2);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 3);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent2, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent2, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2844,100 +1936,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium2(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 1);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 2);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent60);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrLeft, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrRight, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrTop, ettThemeAccent1, dblAccentPercent60);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEMEANDTINT(clrBottom, ettThemeAccent1, dblAccentPercent60);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -2947,100 +2008,69 @@ pStyVec->push_back(spItm);
 void AddTableStyleMedium1(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_MEDIUM_FROM + 0);
 ks_wstring wstrName(_STR_TAB_STYLE_MEDIUM);
 wstrName.AppendFormat(__X("%d"), 1);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3050,97 +2080,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight21(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 20);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 21);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent6);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent6);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent6);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent6);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3150,97 +2151,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight20(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 19);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 20);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent5);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent5);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent5);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent5);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3250,97 +2222,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight19(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 18);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 19);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent4);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent4);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent4);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent4);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3350,97 +2293,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight18(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 17);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 18);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent3);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent3);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent3);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent3);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3450,97 +2364,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight17(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 16);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 17);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent2);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent2);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent2);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent2);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3550,97 +2435,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight16(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 15);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 16);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3650,97 +2506,68 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight15(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 14);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 15);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3750,110 +2577,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight14 (STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 13);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 14);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent6);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent6);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent6);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent6);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent6);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3863,110 +2659,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight13(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 12);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 13);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent5);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent5);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent5);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent5);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent5);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -3976,110 +2741,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight12(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 11);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 12);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent4);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent4);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent4);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent4);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent4);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4089,110 +2823,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight11(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 10);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 11);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent3);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent3);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent3);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent3);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent3);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4202,110 +2905,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight10(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 9);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 10);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent2);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent2);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent2);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent2);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent2);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4315,110 +2987,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight9(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 8);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 9);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeAccent1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent1);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeAccent1);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4428,110 +3069,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight8(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 7);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 8);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
-_xf.dgRight = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrRight = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
+SET_BORDER_TYPE(dgRight, blsThin);
+SET_BORDER_CLR_THEME(clrRight, ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // secondRowStripeXF
 _xf.reset();
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_SecondRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 // secondColumnStripeXF
 _xf.reset();
-_xf.dgLeft = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrLeft = clr;
+SET_BORDER_TYPE(dgLeft, blsThin);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeLight1);
 spItm->SetFormat(TSF_SecondColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4541,89 +3151,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight7(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 6);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 7);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent6, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent6);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent6, -dblAccentPercent75);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent6);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent6, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent6);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent6, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent6, -dblAccentPercent75);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4633,89 +3218,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight6(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 5);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 6);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent5, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent5);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent5, -dblAccentPercent75);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent5);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent5, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent5);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent5, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent5, -dblAccentPercent75);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4725,89 +3285,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight5(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 4);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 5);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent4, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent4);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent4, -dblAccentPercent75);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent4);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent4, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent4);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent4, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent4, -dblAccentPercent75);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4817,89 +3352,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight4(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 3);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 4);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent3, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent3);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent3, -dblAccentPercent75);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent3);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent3, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent3);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent3, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent3, -dblAccentPercent75);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -4909,89 +3419,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight3(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 2);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 3);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent2, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent2);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent2, -dblAccentPercent75);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent2);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent2, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent2);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent2, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent2, -dblAccentPercent75);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5001,89 +3486,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight2(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 1);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 2);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent1, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent1, -dblAccentPercent75);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeAccent1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent1, -dblAccentPercent75);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeAccent1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent1, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEMEANDTINT(ettThemeAccent1, -dblAccentPercent75);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5093,89 +3553,64 @@ pStyVec->push_back(spItm);
 void AddTableStyleLight1(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_LIGHT_FROM + 0);
 ks_wstring wstrName(_STR_TAB_STYLE_LIGHT);
 wstrName.AppendFormat(__X("%d"), 1);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgBottom = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsThin);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsThin;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsThin);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5185,87 +3620,62 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark11(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 10);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 11);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5275,87 +3685,62 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark10(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 9);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 10);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5365,87 +3750,62 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark9(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 8);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 9);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent20);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent20);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent20);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, dblAccentPercent40);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, dblAccentPercent40);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, dblAccentPercent40);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5455,87 +3815,62 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark8(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 7);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 8);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -0.14999847407452621);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -0.14999847407452621);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
-_xf.dgTop = blsDouble;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
+SET_BORDER_TYPE(dgTop, blsDouble);
+SET_BORDER_CLR_THEME(clrTop, ettThemeLight1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.font.clr = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeLight1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -dblAccentPercent65);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -dblAccentPercent65);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeDark1, -dblAccentPercent65);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeDark1, -dblAccentPercent65);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeDark1, -dblAccentPercent65);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5545,124 +3880,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark7(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 6);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 7);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent6);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent6);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent50);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent50);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, -dblAccentPercent50);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, -dblAccentPercent50);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, -dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, -dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent6, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent6, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent6, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5672,124 +3962,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark6(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 5);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 6);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent5);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent5);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent50);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent50);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, -dblAccentPercent50);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, -dblAccentPercent50);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, -dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, -dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent5, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent5, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent5, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5799,124 +4044,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark5(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 4);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 5);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent4);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent4);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent50);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent50);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, -dblAccentPercent50);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, -dblAccentPercent50);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, -dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, -dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent4, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent4, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent4, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -5926,124 +4126,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark4(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 3);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 4);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent3);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent3);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent50);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent50);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, -dblAccentPercent50);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, -dblAccentPercent50);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, -dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, -dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent3, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent3, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent3, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -6053,124 +4208,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark3(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 2);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 3);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent2);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent2);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent50);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent50);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, -dblAccentPercent50);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, -dblAccentPercent50);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, -dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, -dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent2, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent2, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent2, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -6180,124 +4290,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark2(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 1);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 2);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeAccent1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeAccent1);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent50);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent50);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, -dblAccentPercent50);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, -dblAccentPercent50);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, -dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, -dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeAccent1, -dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeAccent1, -dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeAccent1, -dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);
@@ -6307,124 +4372,79 @@ pStyVec->push_back(spItm);
 void AddTableStyleDark1(STYLE_VEC* pStyVec)
 {
 ks_stdptr<KCoreTableStyle> spItm;
-KXF _xf;
-EtColor clr;
 spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));
 spItm->Init(BSI_DARK_FROM + 0);
 ks_wstring wstrName(_STR_TAB_STYLE_DARK);
 wstrName.AppendFormat(__X("%d"), 1);
 spItm->SetName(wstrName.c_str());
 
+KXF _xf;
+EtColor clr;
+
 // wholeTableXF
 _xf.reset();
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent55);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent55);
-_xf.fill.setBack(clr);
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeLight1, dblAccentPercent55);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeLight1, dblAccentPercent55);
 spItm->SetFormat(TSF_WholeTableXF, &_xf);
 
 // headerRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1);
-_xf.fill.setBack(clr);
-_xf.dgBottom = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrBottom = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEME(Fore, ettThemeLight1);
+SET_PATTERNFILL_CLR_THEME(Back, ettThemeLight1);
+SET_BORDER_TYPE(dgBottom, blsMedium);
+SET_BORDER_CLR_THEME(clrBottom, ettThemeDark1);
 spItm->SetFormat(TSF_HeaderRowXF, &_xf);
 
 // totalRowXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, 0.14999847407452621);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, 0.14999847407452621);
-_xf.fill.setBack(clr);
-_xf.dgTop = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrTop = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeLight1, 0.14999847407452621);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeLight1, 0.14999847407452621);
+SET_BORDER_TYPE(dgTop, blsMedium);
+SET_BORDER_CLR_THEME(clrTop, ettThemeDark1);
 spItm->SetFormat(TSF_TotalRowXF, &_xf);
 
 // firstColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgRight = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrRight = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeLight1, dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeLight1, dblAccentPercent75);
+SET_BORDER_TYPE(dgRight, blsMedium);
+SET_BORDER_CLR_THEME(clrRight, ettThemeDark1);
 spItm->SetFormat(TSF_FirstColXF, &_xf);
 
 // lastColumnXF
 _xf.reset();
-_xf.font.bls = 1;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.font.clr = clr;
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setBack(clr);
-_xf.dgLeft = blsMedium;
-clr.setNONE();
-clr.setTheme(ettThemeDark1);
-_xf.clrLeft = clr;
+SET_FONT_BOLD();
+SET_FONT_CLR_THEME(ettThemeDark1);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeLight1, dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeLight1, dblAccentPercent75);
+SET_BORDER_TYPE(dgLeft, blsMedium);
+SET_BORDER_CLR_THEME(clrLeft, ettThemeDark1);
 spItm->SetFormat(TSF_LastColXF, &_xf);
 
 // firstRowStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeLight1, dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeLight1, dblAccentPercent75);
 spItm->SetFormat(TSF_FirstRowStripeXF, &_xf);
 
 // firstColumnStripeXF
 _xf.reset();
-_xf.fill.setType(eftPatternSolid);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setFore(clr);
-clr.setNONE();
-clr.setTheme(ettThemeLight1, dblAccentPercent75);
-_xf.fill.setBack(clr);
+SET_FILL_TYPE(eftPatternSolid);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Fore, ettThemeLight1, dblAccentPercent75);
+SET_PATTERNFILL_CLR_THEMEANDTINT(Back, ettThemeLight1, dblAccentPercent75);
 spItm->SetFormat(TSF_FirstColStripeXF, &_xf);
 
 pStyVec->push_back(spItm);

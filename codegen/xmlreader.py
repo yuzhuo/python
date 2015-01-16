@@ -25,8 +25,6 @@ try:
         f.write("void Add" + tableStyle.get("name") + "(STYLE_VEC* pStyVec)\n")
         f.write("{\n")
         f.write("ks_stdptr<KCoreTableStyle> spItm;\n")
-        f.write("KXF _xf;\n")
-        f.write("EtColor clr;\n")
         f.write("spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));\n")
         # f.write("spItm->Init(BSI_" + tableStyle.get("name") + ");\n")
 
@@ -64,6 +62,8 @@ try:
         f.write("ks_wstring wstrName(" + namestr + ");\n")
         f.write("wstrName.AppendFormat(__X(\"%d\"), " + str(num+1) + ");\n")
         f.write("spItm->SetName(wstrName.c_str());\n\n")
+        f.write("KXF _xf;\n")
+        f.write("EtColor clr;\n\n")
         for tableStyleElement in tableStyle:
             t = tableStyleElement.get("type")
             export_dxf(dxfs[int(tableStyleElement.get("dxfId")) - 1], f, t)

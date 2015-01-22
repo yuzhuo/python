@@ -138,7 +138,7 @@ def export_dxf(dxf, f, t):
             export_border(attr, f)
     t = TABLE_STYLE_FORMAT[t]
     print t
-    f.write("spItm->SetFormat(" + t + ", &_xf);\n")
+    f.write("spItm->SetFormatInner(" + t + ", &_xf);\n")
     newline(f)
 
 def export_fill(fill, f):

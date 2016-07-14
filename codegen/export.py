@@ -106,12 +106,23 @@ def export_bordercolor(color, f, clrBrd):
         tint = color.attrib["tint"]
         if ETTINT.has_key(tint):
             tint = ETTINT[tint]
-        f.write("SET_BORDER_CLR_THEMEANDTINT(" + clrBrd + ", " + ETTHEMETYPE[color.attrib["theme"]] +
+        else:
+            print "tint miss."
+
+        prefix = "SET_BORDER_CLR_THEMEANDTINT("
+        if clrBrd == "clrHorz" or clrBrd == "clrVert":
+            prefix = "SET_INNERBORDER_CLR_THEMEANDTINT("
+
+        f.write(prefix + clrBrd + ", " + ETTHEMETYPE[color.attrib["theme"]] +
             ", " + tint + ");")
         tintdict[color.attrib["tint"]] = "whatever"
         themedict[color.attrib["theme"]] = "whatever"
     elif color.attrib.has_key("theme"):
-        f.write("SET_BORDER_CLR_THEME(" + clrBrd + ", " + ETTHEMETYPE[color.attrib["theme"]] + ");")
+        prefix = "SET_BORDER_CLR_THEME("
+        if clrBrd == "clrHorz" or clrBrd == "clrVert":
+            prefix = "SET_INNERBORDER_CLR_THEME("
+
+        f.write(prefix + clrBrd + ", " + ETTHEMETYPE[color.attrib["theme"]] + ");")
     elif color.attrib.has_key("other attribute"):
         pass
 
@@ -246,7 +257,7 @@ def export_border(border, f):
         elif child.tag == "horizontal":
             if child.get("style") is not None:
                 # f.write("_xf.dgHorz = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
-                f.write("SET_BORDER_TYPE(dgHorz, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
+                f.write("SET_INNERBORDER_TYPE(dgHorz, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
                 newline(f)
             if child.find("color") is not None:
                 # export_color(child.find("color"), f)
@@ -255,7 +266,7 @@ def export_border(border, f):
         elif child.tag == "vertical":
             if child.get("style") is not None:
                 # f.write("_xf.dgVert = " + BORDERLINESTYLE[child.attrib["style"]] + ";")
-                f.write("SET_BORDER_TYPE(dgVert, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
+                f.write("SET_INNERBORDER_TYPE(dgVert, " + BORDERLINESTYLE[child.attrib["style"]] + ");")
                 newline(f)
             if child.find("color") is not None:
                 # export_color(child.find("color"), f)

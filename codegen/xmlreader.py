@@ -22,7 +22,7 @@ try:
 
         f.write("///////////////////" + tableStyle.get("name") +
                 "///////////////////" "\n")
-        f.write("void Add" + tableStyle.get("name") + "(STYLE_VEC* pStyVec)\n")
+        f.write("void Add" + tableStyle.get("name") + "(KCoreTableStyles* pHolder, STYLE_VEC *pStyVec)\n")
         f.write("{\n")
         f.write("ks_stdptr<KCoreTableStyle> spItm;\n")
         f.write("spItm.attach(RTS_NEW(KCoreTableStyle, pStyVec));\n")
@@ -30,26 +30,53 @@ try:
 
         name = tableStyle.get("name")
 
-        dark = re.compile("TableStyleDark")
         light = re.compile("TableStyleLight")
         medium = re.compile("TableStyleMedium")
+        dark = re.compile("TableStyleDark")
+        pivotlight = re.compile("PivotStyleLight")
+        pivotmedium = re.compile("PivotStyleMedium")
+        pivotdark = re.compile("PivotStyleDark")
 
-        mdark = dark.match(name)
         mlight = light.match(name)
         mmedium = medium.match(name)
+        mdark = dark.match(name)
+        mpivotlight = pivotlight.match(name)
+        mpivotmedium = pivotmedium.match(name)
+        mpivotdark = pivotdark.match(name)
+
         lightstr = "_STR_TAB_STYLE_LIGHT"
         mediumstr = "_STR_TAB_STYLE_MEDIUM"
         darkstr = "_STR_TAB_STYLE_DARK"
+        pivotlightstr = "_STR_PIVOT_STYLE_LIGHT"
+        pivotmediumstr = "_STR_PIVOT_STYLE_MEDIUM"
+        pivotdarkstr = "_STR_PIVOT_STYLE_DARK"
+
         namestr = ""
+        b = 0
         if mdark:
-            id = "BSI_DARK_FROM + "
+            id = "BTSI_TABLE_DARK_FROM + "
             namestr = darkstr
+            b = 0
         elif mmedium:
-            id = "BSI_MEDIUM_FROM + "
+            id = "BTSI_TABLE_MEDIUM_FROM + "
             namestr = mediumstr
+            b = 0
         elif mlight:
-            id = "BSI_LIGHT_FROM + "
+            id = "BTSI_TABLE_LIGHT_FROM + "
             namestr = lightstr
+            b = 0
+        elif mpivotdark:
+            id = "BTSI_PIVOT_DARK_FROM + "
+            namestr = pivotdarkstr
+            b = 1
+        elif mpivotmedium:
+            id = "BTSI_PIVOT_MEDIUM_FROM +"
+            namestr = pivotmediumstr
+            b = 1
+        elif mpivotlight:
+            id = "BTSI_PIVOT_LIGHT_FROM +"
+            namestr = pivotlightstr
+            b = 1
 
         pattern = re.compile('\d+')
         match = pattern.search(name)
@@ -57,7 +84,11 @@ try:
         num -= 1
         id += str(num)
 
-        f.write("spItm->Init(" + id + ");\n")
+        arg3 = "TST_TABLE_STYLE"
+        if b == 1:
+            arg3 = "TST_PIVOT_STYLE"
+
+        f.write("spItm->Init(pHolder, " + id + ", " + arg3 + ");\n")
 
         f.write("ks_wstring wstrName(" + namestr + ");\n")
         f.write("wstrName.AppendFormat(__X(\"%d\"), " + str(num+1) + ");\n")
@@ -71,7 +102,7 @@ try:
         f.write("}\n")
         newline(f)
 
-        f2.write("Add" + tableStyle.get("name") + "(m_spStyVec);\n")
+        f2.write("Add" + tableStyle.get("name") + "(this, m_spStyVec);\n")
 
     f.write("\n")
     f.close()

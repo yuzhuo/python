@@ -1,18 +1,33 @@
 TABLE_STYLE_FORMAT =\
 {
-    "wholeTable" : "TSF_WholeTableXF",
-    "firstColumnStripe" : "TSF_FirstColStripeXF",
-    "secondColumnStripe" : "TSF_SecondColStripeXF",
-    "firstRowStripe" : "TSF_FirstRowStripeXF",
-    "secondRowStripe" : "TSF_SecondRowStripeXF",
-    "lastColumn" : "TSF_LastColXF",
-    "firstColumn" : "TSF_FirstColXF",
-    "headerRow" : "TSF_HeaderRowXF",
-    "totalRow" : "TSF_TotalRowXF",
-    "firstHdrCell" : "TSF_FirstHdrCellXF",
-    "lastHdrCell" : "TSF_LastHdrCellXF",
-    "firstTotalCell" : "TSF_FirstTotalCellXF",
-    "lastTotalCell" : "TSF_LastTotalCellXF"
+   	"lastHeaderCell" : "TSF_LastHdrCellXF",
+	"firstTotalCell" : "TSF_FirstTotalCellXF",
+	"lastTotalCell" : "TSF_LastTotalCellXF",
+	"wholeTable" : "TSF_WholeTableXF",
+	"headerRow" : "TSF_HeaderRowXF",
+	"totalRow" : "TSF_TotalRowXF",
+	"firstColumn" : "TSF_FirstColXF",
+	"lastColumn" : "TSF_LastColXF",
+	"firstRowStripe" : "TSF_FirstRowStripeXF",
+	"secondRowStripe" : "TSF_SecondRowStripeXF",
+	"firstColumnStripe" : "TSF_FirstColStripeXF",
+	"secondColumnStripe" : "TSF_SecondColStripeXF",
+	"firstHeaderCell" : "TSF_FirstHdrCellXF",
+	"firstSubtotalColumn" : "TSF_FirstSubtotalColumnXF",
+	"secondSubtotalColumn" : "TSF_SecondSubtotalColumnXF",
+	"thirdSubtotalColumn" : "TSF_ThirdSubtotalColumnXF",
+	"firstSubtotalRow" : "TSF_FirstSubtotalRowXF",
+	"secondSubtotalRow" : "TSF_SecondSubtotalRowXF",
+	"thirdSubtotalRow" : "TSF_ThirdSubtotalRowXF",
+	"blankRow" : "TSF_BlankRowXF",
+	"firstColumnSubheading" : "TSF_FirstColumnSubheadingXF",
+	"secondColumnSubheading" : "TSF_SecondColumnSubheadingXF",
+	"thirdColumnSubheading" : "TSF_ThirdColumnSubheadingXF",
+	"firstRowSubheading" : "TSF_FirstRowSubheadingXF",
+	"secondRowSubheading" : "TSF_SecondRowSubheadingXF",
+	"thirdRowSubheading" : "TSF_ThirdRowSubheadingXF",
+	"pageFieldLabels" : "TSF_PageFieldLabelsXF",
+	"pageFieldValues" : "TSF_PageFieldValuesXF"
 }
 
 # print TABLE_STYLE_FORMAT
@@ -83,14 +98,17 @@ ETTHEMETYPE = \
 
 ETTINT = \
 {
+    "-4.9989318521683403E-2" : "-dblAccentPercent05",
     "0.79998168889431442" :	"dblAccentPercent20",
     "0.59999389629810485" :	"dblAccentPercent40",
     "-0.499984740745262" : "-dblAccentPercent50",
+    "0.499984740745262" : "dblAccentPercent50",
     "0.44999542222357858" :	"dblAccentPercent55",
+    "-0.44999542222357858" :	"-dblAccentPercent55",
     "0.39997558519241921" :	"dblAccentPercent60",
     "-0.34998626667073579" :	"-dblAccentPercent65",
     "0.249977111117893" :	"dblAccentPercent75",
-    "0.1499984740745262" :	"dblAccentPercent85",
+    "0.14999847407452621" :	"dblAccentPercent85",
     "-0.249977111117893" :	"-dblAccentPercent75",
-    "-0.1499984740745262" :	"-dblAccentPercent85"
+    "-0.14999847407452621" :	"-dblAccentPercent85"
 }
